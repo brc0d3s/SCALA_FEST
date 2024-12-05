@@ -1,0 +1,106 @@
+// Maps
+//case class StMarks(name:String, cat1:Int, cat2:Int, exam:Int)
+object Maps extends App{
+  val marks = List(
+    (1045226, StMarks("Wafula", 2, 3, 45)),
+    (104566, StMarks("Joana", 3, 14, 24)),
+    (104567, StMarks("John", 4, 5, 6)),
+    (104568, StMarks("Alice", 5, 6, 7)),
+    (104569, StMarks("Bob", 6, 7, 8)),
+    (104570, StMarks("Charlie", 7, 8, 9)),
+    (104571, StMarks("David", 8, 9, 10)),
+    (104572, StMarks("Eve", 9, 10, 11)),
+    (104573, StMarks("Frank", 10, 11, 12)),
+    (104574, StMarks("George", 11, 12, 13))
+  )
+
+  val names = marks.map { case (id, mark) => id }
+  names.foreach(println)
+}
+//List
+import scala.collection.mutable.ArrayBuffer
+
+//case class StMarks(name:String,gender:String, cat1:Int, cat2:Int, exam:Int)
+object List extends App{
+  def sum(m1:Int, m2:Int,m3:Int)={m1+m2+m3}
+  def grade(mark:Int)={
+    if(mark>=70)"A" else if(mark>=60)"B" else if(mark>=50)"C" else if(mark>=40)"D" else "F"
+  }
+  var marks = ArrayBuffer[StMarks]()
+//  marks ++= List(
+//    StMarks("Mark","M",10,10,30),
+//    StMarks("John","M",9,10,30),
+//    StMarks("Philip","M",9,9,30),
+//    StMarks("Mary","F",7,5,37),
+//    StMarks("Fatima","F",4,6,39),
+//    StMarks("Sherry","F",5,8,29),
+//    StMarks("Mia","F",4,6,29),
+//    StMarks("Noah","M",6,4,29),
+//    StMarks("Dia","F",7,5,24),
+//    StMarks("Diana","F",8,9,24),
+//    StMarks("Dennis","M",8,9,24),
+//    StMarks("Donald","M",8,6,24),
+//    StMarks("Burke","M",5,7,24)
+//  )
+}
+//SEquence
+def sum(m1:Int, m2:Int,m3:Int)={m1+m2+m3}
+  def grade(mark:Int)={
+    if(mark>=70)"A" else if(mark>=60)"B" else if(mark>=50)"C" else if(mark>=40)"D" else "F"
+  }
+  var marks = ArrayBuffer[StMarks]()
+  marks ++= Seq(
+    StMarks("Mark","M",10,10,30),
+    StMarks("John","M",9,10,30),
+    StMarks("Philip","M",9,9,30),
+    StMarks("Mary","F",7,5,37),
+    StMarks("Fatima","F",4,6,39),
+    StMarks("Sherry","F",5,8,29),
+    StMarks("Mia","F",4,6,29),
+    StMarks("Noah","M",6,4,29),
+    StMarks("Dia","F",7,5,24),
+    StMarks("Diana","F",8,9,24),
+    StMarks("Dennis","M",8,9,24),
+    StMarks("Donald","M",8,6,24),
+    StMarks("Burke","M",5,7,24)
+  )
+  println("Head of marks: "+marks.head)
+  marks.foreach(println)
+  marks.foreach(m=>println(m.name))
+  marks.foreach(m=>println(m.cat1+m.cat2+m.exam))
+  marks.foreach(m=>println(m.name+"\t"+(Integer.valueOf(m.cat1)+Integer.valueOf(m.cat2)+Integer.valueOf(m.exam))))
+  marks.foreach(m=>println(m.name+"\t"+grade(sum(Integer.valueOf(m.cat1), Integer.valueOf(m.cat2), Integer.valueOf(m.exam)))))
+marks.foreach(m=>println(m.name+"\t"+sum(Integer.valueOf(m.cat1), Integer.valueOf(m.cat2),Integer.valueOf(m.exam))+"\t"+grade(sum(Integer.valueOf(m.cat1),Integer.valueOf(m.cat2),Integer.valueOf(m.exam)))))
+//Set
+import scala.collection.mutable.ArrayBuffer
+
+object Set extends App{
+  def sum(m1:Int, m2:Int,m3:Int)={m1+m2+m3}
+  def grade(mark:Int)={
+    if(mark>=70)"A" else if(mark>=60)"B" else if(mark>=50)"C" else if(mark>=40)"D" else "F"
+  }
+  var marks = ArrayBuffer[StMarks]()
+  marks ++= Set(
+    StMarks("Mark","M",10,10,30),
+    StMarks("John","M",9,10,30),
+    StMarks("Philip","M",9,9,30),
+    StMarks("Mary","F",7,5,37),
+    StMarks("Fatima","F",4,6,39),
+    StMarks("Sherry","F",5,8,29),
+    StMarks("Mia","F",4,6,29),
+    StMarks("Noah","M",6,4,29),
+    StMarks("Dia","F",7,5,24),
+    StMarks("Diana","F",8,9,24),
+    StMarks("Dennis","M",8,9,24),
+    StMarks("Donald","M",8,6,24),
+    StMarks("Burke","M",5,7,24)
+  )
+  println("Head of marks: "+marks.head)
+  marks.foreach(println)
+  marks.foreach(m=>println(m.name))
+  marks.foreach(m=>println(m.cat1+m.cat2+m.exam))
+  marks.foreach(m=>println(m.name+"\t"+(Integer.valueOf(m.cat1)+Integer.valueOf(m.cat2)+Integer.valueOf(m.exam))))
+  marks.foreach(m=>println(m.name+"\t"+grade(sum(Integer.valueOf(m.cat1), Integer.valueOf(m.cat2), Integer.valueOf(m.exam)))))
+  marks.foreach(m=>println(m.name+"\t"+sum(Integer.valueOf(m.cat1), Integer.valueOf(m.cat2),Integer.valueOf(m.exam))+"\t"+grade(sum(Integer.valueOf(m.cat1),Integer.valueOf(m.cat2),Integer.valueOf(m.exam)))))
+}
+
